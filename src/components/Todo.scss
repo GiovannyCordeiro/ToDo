@@ -1,0 +1,143 @@
+@import "../colors.scss";
+
+.App{
+  .Todo{
+    min-height: 80vh;
+    min-width: 87.5%;
+    // background: rgba(128, 128, 128, 0.701);
+    position: absolute;
+    transform: translateX(-50%);
+    top:5.5%;
+    left: 50%;
+    
+    .header-todo{
+      min-height:2rem;
+      height: 100%;
+      min-width: 100%;
+      // background: rgba(0, 0, 0, 0.423);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h2{
+        font-size: 1.7rem;
+        letter-spacing: .7rem;
+        color: $Very-Light-Gray;
+      }
+
+      img{
+        width: 1.3rem;
+        cursor: pointer;
+      }
+    }
+
+    .input-todo{
+      width: 100%;
+      height: 3rem;
+      background: $Very-Light-Gray;
+      margin-top: 2.05rem;
+      border-radius: .3rem;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0px 0px 50px -5px rgba(0,0,0,0.1);
+      .wrapper-input{
+        width: 87%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        input{
+          height: 100%;
+          width: 100%;
+          border: 0;
+
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+    }
+    // fim do input todo\
+
+    .button{
+      width: 1.2rem;
+      height: 1.1rem;
+      border-radius: 1.2rem;
+      border: 1px solid $Very-Light-Grayish-Blue;
+    }
+
+    .list-todo{
+      width: 100%;
+      margin-top: 1rem;
+      box-shadow: 0px 0px 50px -5px rgba(0,0,0,0.1);
+      // background: rgba(0, 0, 0, 0.42);
+      border-radius: .3rem;
+      .item-task{
+        width: 100%;
+        height: 3.3rem;
+        padding: 0 1.2rem;
+        background: $Very-Light-Gray;
+        border-radius: .3rem .3rem 0 0;
+        border-bottom: 1px solid $Light-Grayish-Blue-hover;
+        .wrapper-item{
+          width: 100%;
+          height: 100%;
+          // background: rgba(0, 0, 0, 0.391);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          input{
+            width: 80%;
+            height: 100%;
+            border: none;
+            background: $Very-Light-Gray;
+            &:focus{
+              outline: none;
+            }
+          }
+          img{
+            width: .8rem;
+          }
+        }
+      }
+      // fim do item task
+
+      .status-tasks{
+        width: 100%;
+        height: 3.3rem;
+        // background: rgba(0, 0, 0, 0.37);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.4rem;
+        gap: 1rem;
+        border-radius:  0 0 .3rem .3rem;
+        span{
+          font-size: .7rem;
+          color: $Dark-Grayish-Blue;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .filter-list{
+      width: 100%;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $Very-Light-Gray;
+      margin-top: 1rem;
+      gap: 1rem;
+      border-radius: .3rem;
+      box-shadow: 0px 0px 50px -5px rgba(0,0,0,0.1);
+
+      span{
+        color: $Dark-Grayish-Blue;
+        font-weight: bold;
+        font-size: .8rem;
+      }
+    }
+    // fim do list todo
+  }
+}

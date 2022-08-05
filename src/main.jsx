@@ -6,8 +6,8 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <TodoContextProvider>
+    {/* <TodoContextProvider> */}
       <App />
-    </TodoContextProvider>
+    {/* </TodoContextProvider> */}
   </React.StrictMode>
 )
