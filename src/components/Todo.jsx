@@ -72,14 +72,12 @@ export default function Todo(){
           <span>5 items left</span>
           <span>Clear Completed</span>
         </div>
-
       </div>
-
       <div className="filter-list">
           <span>All</span>
           <span>Active</span>
           <span>Completed</span>
-        </div>
+      </div>
     </div>
   )
 }
