@@ -45,7 +45,7 @@
         height: 100%;
         display: flex;
         align-items: center;
-        gap: .5rem;
+        gap: 1rem;
         input{
           height: 100%;
           width: 100%;
@@ -60,10 +60,11 @@
     }
     // fim do input todo\
 
-    .button{
-      width: 1.2rem;
-      height: 1.1rem;
+    .button,.button-active{
+      width: 1.6rem;
+      height: 1.5rem;
       border-radius: 1.2rem;
+      cursor:pointer;
       border: 1px solid $Very-Light-Grayish-Blue;
     }
 
@@ -87,7 +88,13 @@
           // background: rgba(0, 0, 0, 0.391);
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: space-around;
+          .button-active{
+            display: flex;
+            align-items:center;
+            justify-content:center;
+            background-image: linear-gradient( to right, #57ddff, #c058f3);
+          }
           input{
             width: 80%;
             height: 100%;
@@ -97,8 +104,14 @@
               outline: none;
             }
           }
-          img{
+          #close-icon{
             width: .8rem;
+            cursor: pointer;
+            transition: .2s;
+            opacity: 0;
+          }
+          &:hover #close-icon{
+            opacity: 100%;
           }
         }
       }
@@ -118,6 +131,11 @@
           font-size: .7rem;
           color: $Dark-Grayish-Blue;
           font-weight: bold;
+          cursor: pointer;
+          transition: .2s;
+          &:hover#clear-completed{
+            color: $Bright-Blue;
+          }
         }
       }
     }
@@ -138,6 +156,11 @@
         color: $Dark-Grayish-Blue;
         font-weight: bold;
         font-size: .8rem;
+        cursor: pointer;
+        transition: .2s;
+        &:hover{
+          color:$Bright-Blue;
+        }
       }
     }
     // fim do list todo
@@ -161,14 +184,19 @@
       }
       
       .input-todo{
-        height: 4rem;
+        height: 4.5rem;
         margin-top: 2.5rem;
+        .wrapper-input{
+          input{
+            font-size: 1.3rem;
+          }
+        }
       }
 
       .list-todo{
         margin-top: 1.5rem;
         .item-task{
-          height: 4rem;
+          height: 4.5rem;
           .wrapper-item{
             input{
               font-size: 1.3rem;
@@ -184,8 +212,11 @@
       .filter-list{
         position: relative;
         bottom: 4rem;
+        left: 50%;
+        transform: translateX(-50%);
         background-color: unset;
         box-shadow: unset;
+        width: 40%;
       }
     }
   }
