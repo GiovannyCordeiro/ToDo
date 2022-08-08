@@ -1,19 +1,25 @@
-import closeIcon from '../images/icon-cross.svg'
+// react
+import { useContext, useState } from 'react'
+import { TodosContext } from '../contexts/TodoContext'
 
+// icons
+import closeIcon from '../images/icon-cross.svg'
 import check from '../images/icon-check.svg'
 
-function ItemTodo() {
+export default function ItemTodo(todo) {
+
+  const {removeItem, completedTask, styleBtn} = useContext(TodosContext)
+
   return (
     <div className="item-task">
       <div className="wrapper-item">
-        <div className="button-active">
-          <img src={check} alt='check'/>
+        <div className={styleBtn}> 
+          <img onClick={() => completedTask(todo)} 
+          src={check} alt='check'/>
         </div>
-        <input type="text" name="text" id="text" value='text' readOnly/>
-        <img id='close-icon' src={closeIcon} />
+        <input value={todo.content} type="text" name="text" id="text" readOnly/>
+        <img onClick={() => removeItem(todo.id)} id='close-icon' src={closeIcon} />
       </div>
     </div>
   )
 }
-
-export default ItemTodo
