@@ -3,8 +3,8 @@ import Todo from './components/Todo'
 
 export default function App() {
   return (
-    <div className="light App">
-      <header id='header-light'></header>
+    <div className="dark App">
+      <header id='header-dark'></header>
       <Todo/>
     </div>
   )

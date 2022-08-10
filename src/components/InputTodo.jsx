@@ -3,7 +3,7 @@ import { TodosContext } from "../contexts/TodoContext"
 
 export default function InputTodo() {
 
-  const {addNewTask} = useContext(TodosContext);
+  const {dispatch} = useContext(TodosContext);
   const [newContent, setNewContent] = useState('');
 
   const captureValue = (e) => {
@@ -12,12 +12,13 @@ export default function InputTodo() {
 
   const sendTask = (e) => {
     e.preventDefault();
-    addNewTask(newContent);
+
+    dispatch({type: 'add-task', payload: newContent})
     setNewContent('')
   }
   
   return (
-    <div className="input-todo">
+    <div className="input-todo-dark">
       <form onSubmit={sendTask} className="wrapper-input">
         <button type="submit" className="button"></button>
         <input type="text" value={newContent} onChange={captureValue} placeholder='Digite sua task aqui...'/>

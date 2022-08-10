@@ -1,20 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef} from 'react'
 import { TodosContext } from '../contexts/TodoContext'
 
 export default function FilterList() {
 
-  const {modesTasks} = useContext(TodosContext);
+  const {modesTasks, setRenderList} = useContext(TodosContext);
 
   const modeAll = () => {
-    // setModesTasks('All')
+    setRenderList('All');
   }
 
   const modeActive = () => {
-    // setModesTasks('Active')
+    setRenderList('Active')
   }
 
   const modeCompleted = () => {
-    // setModesTasks('Completed')
+    setRenderList('Completed')
   }
 
   return (
