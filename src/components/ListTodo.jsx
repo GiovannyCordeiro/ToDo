@@ -13,16 +13,17 @@ export default function ListTodo() {
 
   const {tasks} = state;
 
+
   const all = tasks.map((toDo, index) => ( 
-  <ItemTodo index={index} key={toDo.id} id={toDo.id} content={toDo.content} />
+    <ItemTodo isCompleted={toDo.isCompleted} index={index} key={toDo.id} id={toDo.id} content={toDo.content} />
   ))
 
   const completed = tasks.map((toDo, index) => (
-    toDo.isCompleted === true && <ItemTodo index={index} key={toDo.id} id={toDo.id} content={toDo.content} /> 
+    toDo.isCompleted === true && <ItemTodo isCompleted={toDo.isCompleted} index={index} key={toDo.id} id={toDo.id} content={toDo.content} /> 
   ))
 
   const active = tasks.map((toDo, index) => (
-    toDo.isCompleted === false && <ItemTodo index={index} key={toDo.id} id={toDo.id} content={toDo.content} /> 
+    toDo.isCompleted === false && <ItemTodo isCompleted={toDo.isCompleted} index={index} key={toDo.id} id={toDo.id} content={toDo.content} /> 
   ))
 
     if(renderList === 'All'){

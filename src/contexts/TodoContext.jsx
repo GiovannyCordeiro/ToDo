@@ -1,4 +1,4 @@
-import{createContext, useState, useReducer} from 'react';
+import{ createContext, useState, useReducer} from 'react';
 
 export const TodosContext = createContext();
 
@@ -34,9 +34,7 @@ const TodoContextProvider = ({children}) => {
   }
 
   const [state, dispatch] = useReducer(reducer, { tasks: [] });
-
   const [renderList, setRenderList] = useState('All')
-
 
   return(
     <TodosContext.Provider value={{ dispatch, state, renderList, setRenderList, darkMode, setDarkMode}}>

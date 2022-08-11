@@ -3,7 +3,7 @@ import { TodosContext } from "../contexts/TodoContext"
 
 export default function StatusTask() {
 
-  const {state, dispatch} = useContext(TodosContext);
+  const {state, dispatch, darkMode} = useContext(TodosContext);
   const {tasks} = state;
 
   const fiteredTasks = tasks.filter(todos => 
@@ -15,7 +15,7 @@ export default function StatusTask() {
 
 
   return (
-    <div className="status-tasks">
+    <div className={darkMode === true ? 'status-tasks-dark' : 'status-tasks-light'}>
       <span>{`${pendingTasks} items left`}</span>
       <span onClick={() => {dispatch({type: 'clear-completed', payload: taskscompleted.isCompleted})}} id='clear-completed'>Clear Completed</span>
     </div>

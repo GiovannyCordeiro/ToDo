@@ -46,7 +46,7 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        input{
+        .input-dark,.input-light{
           height: 100%;
           width: 100%;
           border: 0;
@@ -56,6 +56,10 @@
           &:focus{
             outline: none;
           }
+        }
+        .input-light{
+          background: $Very-Light-Gray;
+          color: #000;
         }
       }
     }
@@ -70,7 +74,7 @@
     }
     // fim do input todo\
 
-    .button,.button-active{
+    .button,.button-active, .button-dark{
       width: 1.6rem;
       height: 1.5rem;
       border-radius: 1.2rem;
@@ -78,8 +82,13 @@
       align-items: center;
       justify-content: center;
       cursor:pointer;
-      border: 1px solid $Dark-Grayish-Blue;
-      background-color: $Very-Dark-Desaturated-Blue;
+      border: 1px solid $Light-Grayish-Blue;
+      background-color: #fff;
+    }
+
+    .button-dark{
+      border: 1px solid $Very-Dark-Grayish-Blue;
+      background: $Very-Dark-Desaturated-Blue;
     }
 
     .list-todo{
@@ -89,13 +98,15 @@
       background: $Very-Light-Gray;
       // background: rgba(0, 0, 0, 0.42);
       border-radius: .3rem;
-      .item-task{
+      .item-task-light, .item-task-dark{
         width: 100%;
         height: 3.3rem;
         padding: 0 1.2rem;
-        background: $Very-Light-Gray;
         border-radius: .3rem .3rem 0 0;
         border-bottom: 1px solid $Light-Grayish-Blue-hover;
+        &:first-child{
+          border-radius: .3rem .3rem 0 0;
+        }
         .wrapper-item{
           width: 100%;
           height: 100%;
@@ -107,6 +118,7 @@
             display: flex;
             align-items:center;
             justify-content:center;
+            border: $Dark-Grayish-Blue;
             background-image: linear-gradient( to right, #57ddff, #c058f3);
           }
           input{
@@ -129,12 +141,36 @@
           }
         }
       }
+      .item-task-dark{
+        background: $Very-Dark-Desaturated-Blue;
+        border-bottom: 1px solid $Very-Dark-Desaturated-Blue;
+        border-radius: unset;
+        .wrapper-item{
+          .button{
+            background: $Very-Dark-Desaturated-Blue;
+            border: 1px solid $Very-Dark-Grayish-Blue;
+            img{
+              display: none;
+            }
+          }
+        }
+        &:first-child{
+          border-bottom: 1px solid $Very-Dark-Desaturated-Blue;
+        }
+        .wrapper-item{
+          background: $Very-Dark-Desaturated-Blue;
+          input{
+            background-color: $Very-Dark-Desaturated-Blue;
+            color: #fff;
+          }
+        }
+      }
       // fim do item task
 
-      .status-tasks{
+      .status-tasks-dark, .status-tasks-light{
         width: 100%;
         height: 3.3rem;
-        // background: rgba(0, 0, 0, 0.37);
+        background: $Very-Dark-Desaturated-Blue;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -143,7 +179,7 @@
         border-radius:  0 0 .3rem .3rem;
         span{
           font-size: .7rem;
-          color: $Dark-Grayish-Blue;
+          color: #fff;
           font-weight: bold;
           cursor: pointer;
           transition: .2s;
@@ -152,9 +188,15 @@
           }
         }
       }
+      .status-tasks-light{
+        background: $Very-Light-Gray;
+        span{
+            color: $Dark-Grayish-Blue;
+        }
+      }
     }
 
-    .filter-list{
+    .filter-list-light, .filter-list-dark{
       width: 100%;
       height: 3rem;
       display: flex;
@@ -175,6 +217,12 @@
         &:hover{
           color:$Bright-Blue;
         }
+      }
+    }
+    .filter-list-dark{
+      background: $Very-Dark-Desaturated-Blue;
+      span{
+        color: #fff;
       }
     }
     // fim do list todo

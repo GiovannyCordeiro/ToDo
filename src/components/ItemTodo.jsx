@@ -8,27 +8,26 @@ import check from '../images/icon-check.svg'
 
 export default function ItemTodo(todo) {
 
-  const {dispatch} = useContext(TodosContext);
-  const [styleButton, setStyleButton] = useState('button');
+  const {dispatch,darkMode} = useContext(TodosContext);
 
-  
-  const clickButtonFunction = () => {
-    if(styleButton === 'button'){
-      setStyleButton('button-active');
-    }
-    else if(styleButton ==='button-active' ){
-      setStyleButton('button');
-    }
+  const clickButtonFunction = (todo) => {
     dispatch({ type: 'toggle-completed', payload: todo.index })
-  }
+  };
 
   return (
-    <div className="item-task">
+    <div className={darkMode ? 'item-task-dark' : 'item-task-light'}>
       <div className="wrapper-item">
-        <div className={styleButton} onClick={() => {clickButtonFunction(todo)}} > 
+        <div className={todo.isCompleted ?  'button-active' : 'button' } onClick={() => {clickButtonFunction(todo)}} > 
           <img src={check} alt='check'/>
         </div> 
-        <input value={todo.content} type="text" name="text" id="text" readOnly/>
+        <input 
+          value={todo.content} 
+          type="text" 
+          name="text" 
+          id="text" 
+          readOnly 
+          style={{textDecoration: todo.isCompleted ? 'line-through' : 'none',
+                  color: todo.isCompleted ? '#4d5066' : ''}}/>
         <img onClick={() => dispatch({type: 'delete-item', payload: todo.id})} id='close-icon' src={closeIcon} />
       </div>
     </div>
