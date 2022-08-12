@@ -152,7 +152,7 @@
             img{
               display: none;
             }
-          }
+          } 
         }
         &:first-child{
           border-bottom: 1px solid $Very-Dark-Desaturated-Blue;
@@ -272,7 +272,7 @@
           padding-bottom: 1rem
         }
       }
-      .filter-list{
+      .filter-list-light,.filter-list-dark{
         position: relative;
         bottom: 4rem;
         left: 50%;

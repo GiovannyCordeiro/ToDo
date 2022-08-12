@@ -5,17 +5,19 @@ import { TodosContext } from '../contexts/TodoContext'
 // icons
 import closeIcon from '../images/icon-cross.svg'
 import check from '../images/icon-check.svg'
+import { DarkThemeContext } from '../contexts/DarkThemeCtx';
 
 export default function ItemTodo(todo) {
 
-  const {dispatch,darkMode} = useContext(TodosContext);
+  const { dispatch } = useContext(TodosContext);
+  const { dkApp } = useContext(DarkThemeContext);
 
   const clickButtonFunction = (todo) => {
     dispatch({ type: 'toggle-completed', payload: todo.index })
   };
 
   return (
-    <div className={darkMode ? 'item-task-dark' : 'item-task-light'}>
+    <div className={dkApp ? 'item-task-dark' : 'item-task-light'}>
       <div className="wrapper-item">
         <div className={todo.isCompleted ?  'button-active' : 'button' } onClick={() => {clickButtonFunction(todo)}} > 
           <img src={check} alt='check'/>

@@ -10,8 +10,8 @@ export default function App() {
 
   return (
     
-    <div className={dkApp === true ? "dark App" : "light App"}>
-      <header id={dkApp === true? 'header-dark' : 'header-light'}></header>
+    <div className={dkApp ? "dark App" : "light App"}>
+      <header id={dkApp ? 'header-dark' : 'header-light'}></header>
       <Todo/>
     </div>
   )
