@@ -1,5 +1,4 @@
 <img src="src/todoAssets/mybanner.png">
-<br/>
 
 # ToDo App  - Front end Mentor
 Escolhi esse desafio por se tratar justamente de uma ToDo List 
@@ -20,7 +19,6 @@ SCSS, REACT
 
 
 <img src="src/todoAssets/preview.gif">
-<br/>
 
 ## Instalação e execução
 
