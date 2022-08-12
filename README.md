@@ -20,7 +20,7 @@ SCSS, REACT
 
 
 <img src="src/todoAssets/preview.gif">
-<br/><br/>
+<br/>
 
 ## Instalação e execução
 
