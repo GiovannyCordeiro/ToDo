@@ -1,5 +1,5 @@
 <img src="src/todoAssets/mybanner.png">
-<br/><br/>
+<br/>
 
 # ToDo App  - Front end Mentor
 Escolhi esse desafio por se tratar justamente de uma ToDo List 
